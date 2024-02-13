@@ -149,3 +149,53 @@
     height: 165px;
     box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.464), inset 0 0 10px rgba(255, 255, 255, 0.464);
 }
+.topic-top span{
+    position: relative;
+}
+.topic-top span::before{
+    content: "Ravindra...";
+    color: aqua;
+    animation: words 10s infinite;
+}
+
+.topic-top span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: rgba(52, 51, 51, 0.925);
+    border-left: 2px solid rgb(101, 186, 101);
+    right: -8px;
+    animation: cursor 0.8s infinite, typing 10s steps(10) infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 2px solid rgb(61, 60, 60);
+    }
+}
+@keyframes words{
+    0%,20%{
+        content: "Ravindra...";
+    }
+    21%,40%{
+        content: "Developer...";
+    }
+    41%,60%{
+        content: "Designer...";
+    }
+    61%,80%{
+        content: "Photographer";
+    }
+    81%,100%{
+        content: "Devil...";
+    }
+}
+
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%, 100% {
+        width: calc(100% + 8px);
+    }
+}
